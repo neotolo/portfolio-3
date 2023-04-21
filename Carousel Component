@@ -1,0 +1,23 @@
+class Carousel {
+  constructor(container) {
+    this.container = container;
+    this.slides = Array.from(container.children);
+    this.currentSlide = 0;
+  }
+
+  next() {
+    this.slides[this.currentSlide].classList.remove("active");
+    this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+    this.slides[this.currentSlide].classList.add("active");
+  }
+
+  prev() {
+    this.slides[this.currentSlide].classList.remove("active");
+    this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+    this.slides[this.currentSlide].classList.add("active");
+  }
+}
+
+const carousel = new Carousel(document.getElementById("carousel"));
+document.getElementById("next").addEventListener("click", () => carousel.next());
+document.getElementById("prev").addEventListener("click", () => carousel.prev());
