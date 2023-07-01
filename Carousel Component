@@ -11,6 +11,7 @@ class Carousel {
     this.slides[this.currentSlide].classList.add("active");
   }
 
+
   prev() {
     this.slides[this.currentSlide].classList.remove("active");
     this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
