@@ -22,3 +22,5 @@ class Carousel {
 const carousel = new Carousel(document.getElementById("carousel"));
 document.getElementById("next").addEventListener("click", () => carousel.next());
 document.getElementById("prev").addEventListener("click", () => carousel.prev());
+
+// done
